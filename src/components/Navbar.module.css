@@ -1,4 +1,10 @@
-.hamburgerBtn {
+.hamburgerBtn, .closeBtn {
   font-size: 2.2rem;
   margin-left: auto;
+}
+
+@media (min-width: 800px) {
+  .closeBtn, .hamburgerBtn {
+    display: none;
+  }
 }
