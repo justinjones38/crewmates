@@ -1,4 +1,5 @@
 import styles from "./Home.module.css"
+import amongUsImg from "../assets/among-us-lot.png"
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
       <p className={styles.description}>
         Here is where you can create your very own set of crewmates before sending them off into space!
       </p>
+      <img src={amongUsImg} alt="A list of among us characters" className={styles.mainImg} />
     </div>
   )
 }
