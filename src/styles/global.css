@@ -28,3 +28,7 @@ button:hover {
 img {
   display: block;
 }
+
+svg {
+  display: block;
+}

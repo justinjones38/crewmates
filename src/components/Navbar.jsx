@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <div className={styles.container}>
       <div className={styles.hamburgerMenu}>
-        <GiHamburgerMenu />
+        <GiHamburgerMenu className={styles.hamburgerBtn} />
       </div>
     </div>
   )
