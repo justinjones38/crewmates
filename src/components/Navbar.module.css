@@ -43,7 +43,7 @@
 @media (min-width: 700px) {
   .container {
     background-color: var(--secondary-bg-color);
-    grid-column: 1 / span 3;
+    grid-column: 1 / span 2;
     padding: 0.75em 0.25em;
   }
   .closeBtn,

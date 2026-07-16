@@ -11,7 +11,7 @@ export default function Navbar() {
   return (
     <div className={styles.container}>
       <GiHamburgerMenu className={styles.hamburgerBtn} onClick={() => setIsMenuShown(true)} />
-      {isMenuShown || windowWidth > 700 ? (
+      {isMenuShown || windowWidth >= 700 ? (
         <div className={styles.navContainer}>
             <IoMdClose onClick={() => setIsMenuShown(false)} className={styles.closeBtn} />
           <ul className={styles.navbar}>
