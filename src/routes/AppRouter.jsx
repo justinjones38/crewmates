@@ -1,7 +1,7 @@
 import {BrowserRouter, Routes, Route} from "react-router";
-import Home from "../pages/Home";
 import Layout from "../layout/Layout";
-
+import Home from "../pages/Home";
+import Create from "../pages/Create";
 
 export default function AppRouter() {
   return (
@@ -9,6 +9,7 @@ export default function AppRouter() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="create" element={<Create />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -17,6 +17,7 @@ export default function Navbar() {
           <ul className={styles.navbar}>
             <li className={styles.navList}>
               <NavLink
+              onClick={() => setIsMenuShown(false)}
                 to="."
                 className={({ isActive }) =>
                   isActive
@@ -29,7 +30,8 @@ export default function Navbar() {
             </li>
             <li className={styles.navList}>
               <NavLink
-                to="/about"
+                to="create"
+                onClick={() => setIsMenuShown(false)}
                 className={({ isActive }) =>
                   isActive
                     ? `${styles["navLink"]} ${styles["active"]}`
@@ -41,7 +43,8 @@ export default function Navbar() {
             </li>
             <li className={styles.navList}>
               <NavLink
-                to="/about"
+                to=""
+                onClick={() => setIsMenuShown(false)}
                 className={({ isActive }) =>
                   isActive
                     ? `${styles["navLink"]} ${styles["active"]}`
