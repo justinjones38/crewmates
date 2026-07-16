@@ -1,7 +1,9 @@
-
+import styles from "./Home.module.css"
 
 export default function Home() {
   return (
-    <h1>Home</h1>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Welcome to the Crewmate Creator</h1>
+    </div>
   )
 }

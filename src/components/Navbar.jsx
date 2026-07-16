@@ -3,15 +3,17 @@ import { NavLink } from "react-router";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
-
+import useWindowSize from "../hooks/useWindowSize";
 
 export default function Navbar() {
   const [isMenuShown, setIsMenuShown] = useState(false);
+  const { windowWidth } = useWindowSize();
   return (
     <div className={styles.container}>
-        <GiHamburgerMenu className={styles.hamburgerBtn} />
+      <GiHamburgerMenu className={styles.hamburgerBtn} onClick={() => setIsMenuShown(true)} />
+      {isMenuShown || windowWidth > 700 ? (
         <div className={styles.navContainer}>
-          <div className={styles.closeBtn}><IoMdClose /></div>
+            <IoMdClose onClick={() => setIsMenuShown(false)} className={styles.closeBtn} />
           <ul className={styles.navbar}>
             <li className={styles.navList}>
               <NavLink
@@ -51,6 +53,7 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
+      ) : null}
     </div>
   );
 }
