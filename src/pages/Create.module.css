@@ -28,6 +28,7 @@
   grid-template-columns: repeat(3, 1fr);
   font-size: 1.1rem;
   gap: 1.25em;
+  margin-bottom: 0.75em;
 }
 
 .radioBtn {
@@ -37,4 +38,20 @@
 
 .radioLabel:focus, .radioLabel:hover, .radioBtn:focus, .radioBtn:hover {
   cursor: pointer;
+}
+
+.btn {
+  background-color: var(--btn-bg-color);
+  color: var(--btn-text-color);
+  font-size: 1.1rem;
+  padding: 0.75em 1.5em;
+  margin: 0 auto;
+  border: none;
+  border-radius: 6px;
+  transition: 0.3s background-color;
+
+}
+
+.btn:hover, .btn:focus {
+  background-color: var(--btn-bg-hover-color);
 }

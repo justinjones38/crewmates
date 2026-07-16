@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./Create.module.css";
 import amongUsImg from "../assets/among-us-lot.png";
 import { supabase } from "../services/client";
+import { useNavigate } from "react-router";
 
 export default function Create() {
   const [inputs, setInputs] = useState({
@@ -9,12 +10,34 @@ export default function Create() {
     speed: "",
     color: "",
   });
+  const navigate = useNavigate();
 
   const handleChange = (e) =>
     setInputs((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
     }));
+
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+    if(!inputs.name || !inputs.speed || !inputs.color) {
+      alert("Please complete all form elements before submittting");
+      return;
+    }
+
+    await supabase
+      .from("crewmates")
+      .insert({name: inputs.name, speed: Number(inputs.speed), color: inputs.color})
+
+    alert("Thanks for submitting your form!")
+    navigate("/");
+    setInputs({
+    name: "",
+    speed: "",
+    color: "",
+  })
+  return;
+  }
 
   return (
     <div className={styles.container}>
@@ -24,7 +47,7 @@ export default function Create() {
         alt="A list of among us characters looking"
         className={styles.img}
       />
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <label htmlFor="name" className={styles.textLabel}>
           Name
         </label>
@@ -129,6 +152,7 @@ export default function Create() {
             Pink
           </label>
         </div>
+        <button className={styles.btn}>Submit</button>
       </form>
     </div>
   );
