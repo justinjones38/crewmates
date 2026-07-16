@@ -1,4 +1,5 @@
-.hamburgerBtn, .closeBtn {
+.hamburgerBtn,
+.closeBtn {
   font-size: 2.2rem;
   margin-left: auto;
 }
@@ -25,12 +26,18 @@
   gap: 1.25em;
 }
 
-  .navList {
-    text-align: center;
-  }
+.navList {
+  text-align: center;
+}
 
 .navLink {
   font-size: 2rem;
+  transition: 0.3s border-bottom;
+}
+
+
+.navLink:focus, .navLink:hover, .navLink.active {
+  border-bottom: 3px solid var(--primary--text-color);
 }
 
 @media (min-width: 700px) {
@@ -39,7 +46,8 @@
     grid-column: 1 / span 3;
     padding: 0.75em 0.25em;
   }
-  .closeBtn, .hamburgerBtn {
+  .closeBtn,
+  .hamburgerBtn {
     display: none;
   }
 
@@ -48,7 +56,7 @@
     background-color: var(--secondary-bg-color);
   }
 
-  .navbar{
+  .navbar {
     gap: 1.5em;
   }
 

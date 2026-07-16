@@ -29,7 +29,7 @@ export default function Navbar() {
             </li>
             <li className={styles.navList}>
               <NavLink
-                to="#"
+                to="/about"
                 className={({ isActive }) =>
                   isActive
                     ? `${styles["navLink"]} ${styles["active"]}`
@@ -41,7 +41,7 @@ export default function Navbar() {
             </li>
             <li className={styles.navList}>
               <NavLink
-                to="#"
+                to="/about"
                 className={({ isActive }) =>
                   isActive
                     ? `${styles["navLink"]} ${styles["active"]}`
