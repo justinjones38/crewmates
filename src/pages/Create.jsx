@@ -7,22 +7,11 @@ import Button from "../components/Button";
 import Form from "../components/Form";
 
 export default function Create() {
-  const [inputs, setInputs] = useState({
-    name: "",
-    speed: "",
-    color: "",
-  });
-
   const navigate = useNavigate();
   const {fetchData} = useOutletContext()
 
-  const handleChange = (e) => 
-    setInputs((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async(e, inputs) => {
     e.preventDefault();
     if(!inputs.name || !inputs.speed || !inputs.color) {
       alert("Please complete all form elements before submittting");
@@ -37,11 +26,6 @@ export default function Create() {
 
     alert("Thanks for submitting your form!")
     navigate("/gallery");
-    setInputs({
-    name: "",
-    speed: "",
-    color: "",
-  })
   return;
   }
 
@@ -53,7 +37,7 @@ export default function Create() {
         alt="A list of among us characters looking"
         className={styles.img}
       />
-      <Form inputs={inputs} handleChange={handleChange} handleSubmit={handleSubmit} />
+      <Form nameInput="" speedInput="" colorInput="" handleSubmit={handleSubmit} />
     </div>
   );
 }
