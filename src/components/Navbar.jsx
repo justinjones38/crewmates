@@ -38,7 +38,7 @@ export default function Navbar() {
                     : styles["navLink"]
                 }
               >
-                Create a Crewmare
+                Create a Crewmate
               </NavLink>
             </li>
             <li className={styles.navList}>
