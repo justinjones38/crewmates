@@ -12,12 +12,15 @@
   white-space: nowrap;
 }
 
-.btn.sm {
-  max-width: 300px;
-  padding: 0.6em 0.9em;
-  font-size: 1rem;
-}
 
 .btn:hover, .btn:focus {
   background-color: var(--btn-bg-hover-color);
+}
+
+.btn.red {
+  background-color: var(--btn-red-bg-color);
+}
+
+.btn.red:hover, .btn.red:focus {
+  background-color: var(--btn-red-bg-hover-color);
 }

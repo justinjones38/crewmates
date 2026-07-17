@@ -1,9 +1,9 @@
 import styles from "./Button.module.css"
 
-export default function Button({children, size, ...restProps}) {
-  console.log(size);
+export default function Button({children, color, ...restProps}) {
+  console.log(color);
   return (
-    <button className={`${styles.btn} ${size ? styles[size] : ""}`} {...restProps}>{children}</button>
+    <button className={`${styles.btn} ${color ? styles[color] : ""}`} {...restProps}>{children}</button>
   )
 
 }
