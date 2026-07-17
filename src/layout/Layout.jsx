@@ -9,7 +9,7 @@ export default function Layout() {
   const [error, setError] = useState(false);
 
   const fetchData = async () => {
-    const { data, error } = await supabase.from("crewmates").select();
+    const { data, error } = await supabase.from("crewmates").select().order("created_at", {ascending: true});
 
     if (error) {
       setError(true);

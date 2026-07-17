@@ -22,6 +22,12 @@ export default function Edit() {
       alert("Please complete all form elements before submittting");
       return;
     }
+
+    const confirm = window.confirm("Are you sure you want to edit this item?");
+    if(!confirm) {
+      return;
+    }
+
     await supabase
       .from("crewmates")
       .update({name: inputs.name, speed: inputs.speed, color: inputs.color})
@@ -29,7 +35,6 @@ export default function Edit() {
 
     await fetchData();
 
-    alert("Thanks for submitting your form!");
     navigate("/gallery")
   }
 
