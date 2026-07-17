@@ -42,7 +42,9 @@ export default function Gallery() {
                   Color of crewmate <span>{item.color}</span>
                 </p>
               </div>
-              <Button>Edit Crewmates</Button>
+              <div className={styles.btnContainer}>
+              <Button size="sm">Edit Crewmates</Button>
+              </div>
             </div>
           ))}
         </div>

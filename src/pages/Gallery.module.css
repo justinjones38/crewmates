@@ -10,6 +10,16 @@
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
   padding: 0.5em;
   border-radius: 6px;
+}
+
+.itemDescriptionContainer {
+  margin-bottom: 1.25em;
+}
+
+.btnContainer {
+  margin-top: auto;
 }

@@ -4,11 +4,17 @@
   font-size: 1.1rem;
   padding: 0.75em 1.5em;
   width: 60%;
-  max-width: 300px;
+  max-width: 250px;
   margin: 0 auto;
   border: none;
   border-radius: 6px;
   transition: 0.3s background-color;
+}
+
+.btn.sm {
+  max-width: 300px;
+  padding: 0.6em 0.9em;
+  font-size: 1rem;
 }
 
 .btn:hover, .btn:focus {
