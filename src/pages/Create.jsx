@@ -3,6 +3,7 @@ import styles from "./Create.module.css";
 import amongUsImg from "../assets/among-us-lot.png";
 import { supabase } from "../services/client";
 import { useNavigate } from "react-router";
+import Button from "../components/Button";
 
 export default function Create() {
   const [inputs, setInputs] = useState({
@@ -152,7 +153,7 @@ export default function Create() {
             Pink
           </label>
         </div>
-        <button className={styles.btn}>Submit</button>
+        <Button>Submit</Button>
       </form>
     </div>
   );

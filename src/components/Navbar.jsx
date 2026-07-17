@@ -43,7 +43,7 @@ export default function Navbar() {
             </li>
             <li className={styles.navList}>
               <NavLink
-                to=""
+                to="gallery"
                 onClick={() => setIsMenuShown(false)}
                 className={({ isActive }) =>
                   isActive
