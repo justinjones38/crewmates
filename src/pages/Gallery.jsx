@@ -1,25 +1,12 @@
 import { useEffect, useState } from "react";
+import { useOutletContext } from "react-router";
 import styles from "./Gallery.module.css";
-import { supabase } from "../services/client";
 import Button from "../components/Button";
 import img from "../assets/among-us-char.png"
 
 export default function Gallery() {
-  const [crewmates, setCrewmates] = useState(null);
-  const [error, setError] = useState(false);
+  const {crewmates, error} = useOutletContext();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const { data, error } = await supabase.from("crewmates").select();
-
-      if (error) {
-        setError(true);
-        return;
-      }
-      setCrewmates(data);
-    };
-    fetchData();
-  }, []);
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Your Crewmate Gallery!</h1>
@@ -35,13 +22,13 @@ export default function Gallery() {
               <img src={img} alt="A blue among us character" className={styles.img} />
               <div className={styles.itemDescriptionContainer}>
                 <p className={styles.description}>
-                  Name of crewmate <span>{item.name}</span>
+                  Name of crewmate: <span>{item.name}</span>
                 </p>
                 <p className={styles.description}>
-                  Speed of crewmate <span>{item.speed} mph</span>
+                  Speed of crewmate: <span>{item.speed}mph</span>
                 </p>
                 <p className={styles.description}>
-                  Color of crewmate <span>{item.color}</span>
+                  Color of crewmate: <span>{item.color}</span>
                 </p>
               </div>
               <div className={styles.btnContainer}>

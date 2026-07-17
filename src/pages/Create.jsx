@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./Create.module.css";
 import amongUsImg from "../assets/among-us-lot.png";
 import { supabase } from "../services/client";
-import { useNavigate } from "react-router";
+import { useNavigate, useOutletContext } from "react-router";
 import Button from "../components/Button";
 
 export default function Create() {
@@ -12,6 +12,7 @@ export default function Create() {
     color: "",
   });
   const navigate = useNavigate();
+  const {fetchData} = useOutletContext()
 
   const handleChange = (e) =>
     setInputs((prev) => ({
@@ -29,9 +30,11 @@ export default function Create() {
     await supabase
       .from("crewmates")
       .insert({name: inputs.name, speed: Number(inputs.speed), color: inputs.color})
+    
+    await fetchData()
 
     alert("Thanks for submitting your form!")
-    navigate("/");
+    navigate("/gallery");
     setInputs({
     name: "",
     speed: "",

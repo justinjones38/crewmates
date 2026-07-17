@@ -3,6 +3,10 @@
   margin: 0 auto;
 }
 
+.emptyDes {
+  text-align: center;
+}
+
 .cardContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
@@ -14,6 +18,8 @@
   flex-direction: column;
   padding: 0.5em;
   border-radius: 6px;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
 .img {
@@ -24,6 +30,14 @@
 
 .itemDescriptionContainer {
   margin-bottom: 1.25em;
+}
+
+.description {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.2em;
+  border-bottom: 1px solid var(--primary--text-color);
+  padding: 0.25em 0.5em;
 }
 
 .btnContainer {
