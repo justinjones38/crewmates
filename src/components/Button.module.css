@@ -1,0 +1,27 @@
+.btn {
+  background-color: var(--btn-bg-color);
+  color: var(--btn-text-color);
+  font-size: 1.1rem;
+  padding: 0.75em 1.5em;
+  width: 60%;
+  max-width: 250px;
+  margin: 0 auto;
+  border: none;
+  border-radius: 6px;
+  transition: 0.3s background-color;
+  white-space: nowrap;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--btn-bg-hover-color);
+}
+
+.btn.red {
+  background-color: var(--btn-red-bg-color);
+}
+
+.btn.red:hover,
+.btn.red:focus {
+  background-color: var(--btn-red-bg-hover-color);
+}

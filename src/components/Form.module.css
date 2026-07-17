@@ -1,0 +1,26 @@
+.form {
+  width: 95%;
+  max-width: 325px;
+  margin: 0 auto 1em;
+}
+
+.textLabel {
+  font-size: 1.1rem;
+}
+
+.textInput {
+  font-size: 1.1rem;
+  line-height: 34px;
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 1em;
+  padding: 0.25em;
+}
+
+.radioContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  font-size: 1.1rem;
+  gap: 1.25em;
+  margin-bottom: 0.75em;
+}

@@ -1,0 +1,14 @@
+.container {
+  text-align: center;
+}
+
+.description {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.mainImg {
+  width: 98%;
+  max-width: 250px;
+  margin: 0 auto;
+}

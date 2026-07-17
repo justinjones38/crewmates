@@ -1,0 +1,16 @@
+:root {
+  /* Background Colors */
+  --bg-color: #002029;
+  --secondary-bg-color: #004052;
+
+  /* Font Colors */
+  --primary--text-color: #fafafa;
+
+  /* Buttons  */
+  --btn-bg-color: #57dbff;
+  --btn-bg-hover-color: #8fe7ff;
+  --btn-text-color: #050505;
+
+  --btn-red-bg-color: #ff999c;
+  --btn-red-bg-hover-color: #ffc7c7;
+}
