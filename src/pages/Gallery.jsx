@@ -41,7 +41,7 @@ export default function Gallery() {
                 </div>
               </Link>
               <div className={styles.btnContainer}>
-                <Button size="sm">Edit Crewmates</Button>
+                <Link to="edit">Edit Crewmates</Link>
               </div>
             </div>
           ))}

@@ -3,6 +3,7 @@ import Layout from "../layout/Layout";
 import Home from "../pages/Home";
 import Create from "../pages/Create";
 import Gallery from "../pages/Gallery";
+import Edit from "../pages/Edit";
 
 export default function AppRouter() {
   return (
@@ -12,6 +13,7 @@ export default function AppRouter() {
           <Route index element={<Home />} />
           <Route path="create" element={<Create />} />
           <Route path="gallery" element={<Gallery />} />
+          <Route path="gallery/edit" element={<Edit />} />
         </Route>
       </Routes>
     </BrowserRouter>
