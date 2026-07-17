@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./Gallery.module.css";
 import { supabase } from "../services/client";
 import Button from "../components/Button";
+import img from "../assets/among-us-char.png"
 
 export default function Gallery() {
   const [crewmates, setCrewmates] = useState(null);
@@ -31,6 +32,7 @@ export default function Gallery() {
               style={{ border: `1px solid ${item["color"]}` }}
               key={item.id}
             >
+              <img src={img} alt="A blue among us character" className={styles.img} />
               <div className={styles.itemDescriptionContainer}>
                 <p className={styles.description}>
                   Name of crewmate <span>{item.name}</span>
