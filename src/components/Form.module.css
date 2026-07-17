@@ -24,12 +24,3 @@
   gap: 1.25em;
   margin-bottom: 0.75em;
 }
-
-.radioBtn {
-  display: initial;
-  margin-right: 0.3em;
-}
-
-.radioLabel:focus, .radioLabel:hover, .radioBtn:focus, .radioBtn:hover {
-  cursor: pointer;
-}

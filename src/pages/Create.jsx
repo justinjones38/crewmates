@@ -12,10 +12,11 @@ export default function Create() {
     speed: "",
     color: "",
   });
+
   const navigate = useNavigate();
   const {fetchData} = useOutletContext()
 
-  const handleChange = (e) =>
+  const handleChange = (e) => 
     setInputs((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
