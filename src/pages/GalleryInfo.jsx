@@ -5,6 +5,8 @@ import styles from "./GalleryInfo.module.css"
 export default function GalleryInfo() {
   const {id} = useParams();
   const {crewmates} = useOutletContext();
+  let alert;
+
   console.log(crewmates);
 
   if(!crewmates) {
@@ -12,6 +14,17 @@ export default function GalleryInfo() {
   }
 
   const data = crewmates.find(item => item.id === Number(id));
+  const alertNot = () => {
+    if(data.speed < 10) {
+      return `Wow! you crewmate is very slow!`
+    } else if (data.speed >= 10 && data.speed < 30) {
+      return `Your crewmate is kind of slow.`
+    } else if (data.speed >= 30 && data.speed < 50) {
+      return `Your crewmate has some good speed`
+    } else {
+      return `Amazing! your crewmate is very fast!`
+    }
+  }
   console.log(data);
 
   return (
@@ -22,7 +35,7 @@ export default function GalleryInfo() {
         <p className={styles.description}>Color: {data.color}</p>
         <p className={styles.description}>Speed: {data.speed}mph</p>
       </div>
-      <p className={styles.alert}>You don't like this crewmate! Feel free to edit the crewmate and click the button below.</p>
+      <p className={styles.alert}>{alertNot()}</p>
       <Link to={`../edit/${id}`} className={styles.linkBtn} relative="path">Edit Crewmate</Link>
     </div>
   )
