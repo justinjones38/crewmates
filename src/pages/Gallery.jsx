@@ -41,7 +41,7 @@ export default function Gallery() {
                 </div>
               </Link>
               <div className={styles.btnContainer}>
-                <Link to="edit">Edit Crewmates</Link>
+                <Link to={`edit/${item.id}`} className={styles.linkBtn} >Edit Crewmates</Link>
               </div>
             </div>
           ))}

@@ -1,10 +1,14 @@
-import styles from "./Edit.module.css"
+import styles from "./Edit.module.css";
+import { useParams, useOutletContext } from "react-router";
+import { useEffect, useState } from "react";
 
 export default function Edit() {
-  return (
-  <div className={styles.container}>
-    <h1 className={styles.title}>Update your Crewmate</h1>
-  </div>
-  )
+  const {id} = useParams();
 
+
+  return (
+    <div className={styles.container}>
+      <h1 className={styles.title}>Update your Crewmate</h1>
+    </div>
+  );
 }

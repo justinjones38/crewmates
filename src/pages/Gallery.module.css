@@ -49,4 +49,19 @@
 
 .btnContainer {
   margin-top: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.linkBtn {
+  padding: 0.75em 1.25em;
+  background-color: var(--btn-bg-color);
+  color: var(--btn-text-color);
+  border-radius: 6px;
+  margin: 0 auto;
+  transition: 0.3s background-color;
+}
+
+.linkBtn:focus, .linkBtn:hover {
+  background-color: var(--btn-bg-hover-color);
 }

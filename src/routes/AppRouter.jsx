@@ -13,7 +13,7 @@ export default function AppRouter() {
           <Route index element={<Home />} />
           <Route path="create" element={<Create />} />
           <Route path="gallery" element={<Gallery />} />
-          <Route path="gallery/edit" element={<Edit />} />
+          <Route path="gallery/edit/:id" element={<Edit />} />
         </Route>
       </Routes>
     </BrowserRouter>
