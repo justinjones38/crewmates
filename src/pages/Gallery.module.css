@@ -1,0 +1,15 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+  gap: 1.5em;
+}
+
+.card {
+  padding: 0.5em;
+  border-radius: 6px;
+}
