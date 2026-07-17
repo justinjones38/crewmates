@@ -22,7 +22,7 @@ export default function Gallery() {
               style={{ border: `1px solid ${item["color"]}` }}
               key={item.id}
             >
-              <Link className={styles.cardLink}>
+              <Link className={styles.cardLink} to={`${item.id}`}>
                 <img
                   src={img}
                   alt="A blue among us character"

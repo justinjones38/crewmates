@@ -5,4 +5,7 @@ h1 {
   margin-bottom: 0.75em;
 }
 
-
+h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
