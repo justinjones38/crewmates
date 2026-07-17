@@ -1,6 +1,8 @@
 import styles from "./Form.module.css";
 import Button from "./Button";
 import RadioBtn from "./RadioBtn";
+import DarkBtns from "./RadioBtnColors/DarkBtns";
+import LightBtns from "./RadioBtnColors/LightBtns";
 import { useState } from "react";
 
 export default function Form({
@@ -23,6 +25,17 @@ export default function Form({
       [e.target.name]: e.target.value,
     }));
 
+
+  const handleRadioInput = () => {
+    if(inputs.force=== "light") {
+      return (
+        <LightBtns inputs={inputs} handleChange={handleChange} />
+      )
+    } else if (inputs.force === "dark") {
+      return (<DarkBtns inputs={inputs} handleChange={handleChange} />)
+    } 
+      return;
+  }
   return (
     <form className={styles.form} onSubmit={(e) => handleSubmit(e, inputs)}>
       <label htmlFor="name" className={styles.textLabel}>
@@ -73,56 +86,7 @@ export default function Form({
 
       <fieldset id="color">
         <legend className={styles.textLabel}>Color</legend>
-        <div className={styles.radioContainer}>
-          <RadioBtn
-            name="color"
-            value="red"
-            inputs={inputs}
-            handleChange={handleChange}
-          >
-            Red
-          </RadioBtn>
-          <RadioBtn
-            name="color"
-            value="blue"
-            inputs={inputs}
-            handleChange={handleChange}
-          >
-            Blue
-          </RadioBtn>
-          <RadioBtn
-            name="color"
-            value="green"
-            inputs={inputs}
-            handleChange={handleChange}
-          >
-            Green
-          </RadioBtn>
-          <RadioBtn
-            name="color"
-            value="yellow"
-            inputs={inputs}
-            handleChange={handleChange}
-          >
-            Yellow
-          </RadioBtn>
-          <RadioBtn
-            name="color"
-            value="orange"
-            inputs={inputs}
-            handleChange={handleChange}
-          >
-            Orange
-          </RadioBtn>
-          <RadioBtn
-            name="color"
-            value="pink"
-            inputs={inputs}
-            handleChange={handleChange}
-          >
-            Pink
-          </RadioBtn>
-        </div>
+        {handleRadioInput()}
       </fieldset>
 
       <Button>Submit</Button>
