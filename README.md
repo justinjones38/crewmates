@@ -1,10 +1,10 @@
 # Web Development Project 7 - *Name of App Here*
 
-Submitted by: **Your Name Here**
+Submitted by: **Justin Jones**
 
-This web app: **insert description**
+This web app: **A fun crewmates game that lets you add members to a database**
 
-Time spent: **X** hours spent in total
+Time spent: **12** hours spent in total
 
 ## Required Features
 
@@ -64,7 +64,7 @@ GIF created with ...
 ## Notes
 
 Describe any challenges encountered while building the app.
-
+- Organization
 ## License
 
     Copyright [yyyy] [name of copyright owner]
