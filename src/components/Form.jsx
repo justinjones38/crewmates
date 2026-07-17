@@ -25,17 +25,14 @@ export default function Form({
       [e.target.name]: e.target.value,
     }));
 
-
   const handleRadioInput = () => {
-    if(inputs.force=== "light") {
-      return (
-        <LightBtns inputs={inputs} handleChange={handleChange} />
-      )
+    if (inputs.force === "light") {
+      return <LightBtns inputs={inputs} handleChange={handleChange} />;
     } else if (inputs.force === "dark") {
-      return (<DarkBtns inputs={inputs} handleChange={handleChange} />)
-    } 
-      return;
-  }
+      return <DarkBtns inputs={inputs} handleChange={handleChange} />;
+    }
+    return;
+  };
   return (
     <form className={styles.form} onSubmit={(e) => handleSubmit(e, inputs)}>
       <label htmlFor="name" className={styles.textLabel}>

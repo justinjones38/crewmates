@@ -3,6 +3,9 @@
   margin-right: 0.3em;
 }
 
-.radioLabel:focus, .radioLabel:hover, .radioBtn:focus, .radioBtn:hover {
+.radioLabel:focus,
+.radioLabel:hover,
+.radioBtn:focus,
+.radioBtn:hover {
   cursor: pointer;
 }

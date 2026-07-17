@@ -35,8 +35,9 @@
   transition: 0.3s border-bottom;
 }
 
-
-.navLink:focus, .navLink:hover, .navLink.active {
+.navLink:focus,
+.navLink:hover,
+.navLink.active {
   border-bottom: 3px solid var(--primary--text-color);
 }
 

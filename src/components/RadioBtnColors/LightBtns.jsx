@@ -1,7 +1,7 @@
-import styles from "./LightBtns.module.css"
-import RadioBtn from "../RadioBtn"
+import styles from "./LightBtns.module.css";
+import RadioBtn from "../RadioBtn";
 
-export default function LightBtns({handleChange, inputs}) {
+export default function LightBtns({ handleChange, inputs }) {
   return (
     <div className={styles.container}>
       <RadioBtn
@@ -53,5 +53,5 @@ export default function LightBtns({handleChange, inputs}) {
         Orange
       </RadioBtn>
     </div>
-  )
+  );
 }

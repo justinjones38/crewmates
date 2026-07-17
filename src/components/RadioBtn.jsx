@@ -1,6 +1,12 @@
 import styles from "./RadioBtn.module.css";
 
-export default function RadioBtn({children, name, value, inputs, handleChange}) {
+export default function RadioBtn({
+  children,
+  name,
+  value,
+  inputs,
+  handleChange,
+}) {
   return (
     <label className={styles.radioLabel}>
       <input

@@ -12,8 +12,8 @@
   white-space: nowrap;
 }
 
-
-.btn:hover, .btn:focus {
+.btn:hover,
+.btn:focus {
   background-color: var(--btn-bg-hover-color);
 }
 
@@ -21,6 +21,7 @@
   background-color: var(--btn-red-bg-color);
 }
 
-.btn.red:hover, .btn.red:focus {
+.btn.red:hover,
+.btn.red:focus {
   background-color: var(--btn-red-bg-hover-color);
 }

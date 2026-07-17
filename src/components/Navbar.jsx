@@ -10,14 +10,20 @@ export default function Navbar() {
   const { windowWidth } = useWindowSize();
   return (
     <div className={styles.container}>
-      <GiHamburgerMenu className={styles.hamburgerBtn} onClick={() => setIsMenuShown(true)} />
+      <GiHamburgerMenu
+        className={styles.hamburgerBtn}
+        onClick={() => setIsMenuShown(true)}
+      />
       {isMenuShown || windowWidth >= 700 ? (
         <div className={styles.navContainer}>
-            <IoMdClose onClick={() => setIsMenuShown(false)} className={styles.closeBtn} />
+          <IoMdClose
+            onClick={() => setIsMenuShown(false)}
+            className={styles.closeBtn}
+          />
           <ul className={styles.navbar}>
             <li className={styles.navList}>
               <NavLink
-              onClick={() => setIsMenuShown(false)}
+                onClick={() => setIsMenuShown(false)}
                 to="."
                 className={({ isActive }) =>
                   isActive

@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route} from "react-router";
+import { BrowserRouter, Routes, Route } from "react-router";
 import Layout from "../layout/Layout";
 import Home from "../pages/Home";
 import Create from "../pages/Create";
@@ -19,5 +19,5 @@ export default function AppRouter() {
         </Route>
       </Routes>
     </BrowserRouter>
-  )
+  );
 }

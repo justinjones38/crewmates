@@ -6,61 +6,72 @@ import { supabase } from "../services/client";
 import Button from "../components/Button";
 
 export default function Edit() {
-  const {id} = useParams();
-  const {crewmates, fetchData} = useOutletContext();
+  const { id } = useParams();
+  const { crewmates, fetchData } = useOutletContext();
   const navigate = useNavigate();
 
-  if(!crewmates) {
-    return <h2>Loading ...</h2>
+  if (!crewmates) {
+    return <h2>Loading ...</h2>;
   }
 
-  const data = crewmates.find(item => item.id === Number(id));
+  const data = crewmates.find((item) => item.id === Number(id));
 
-  const handleSubmit = async(e, inputs) => {
+  const handleSubmit = async (e, inputs) => {
     e.preventDefault();
-    if(!inputs.name || !inputs.speed || !inputs.force || !inputs.color) {
+    if (!inputs.name || !inputs.speed || !inputs.force || !inputs.color) {
       alert("Please complete all form elements before submittting");
       return;
     }
 
     const confirm = window.confirm("Are you sure you want to edit this item?");
-    if(!confirm) {
+    if (!confirm) {
       return;
     }
 
     await supabase
       .from("crewmates")
-      .update({name: inputs.name, speed: inputs.speed, color: inputs.color, force: inputs.force})
-      .eq("id", id)
+      .update({
+        name: inputs.name,
+        speed: inputs.speed,
+        color: inputs.color,
+        force: inputs.force,
+      })
+      .eq("id", id);
 
     await fetchData();
 
-    navigate("/gallery")
-  }
+    navigate("/gallery");
+  };
 
-  const deleteItem = async() => {
-    const confirm = window.confirm("Are you sure that you want to delete this item?")
-    if(!confirm) {
+  const deleteItem = async () => {
+    const confirm = window.confirm(
+      "Are you sure that you want to delete this item?",
+    );
+    if (!confirm) {
       return;
     }
-    await supabase
-      .from("crewmates")
-      .delete()
-      .eq("id", data.id)
+    await supabase.from("crewmates").delete().eq("id", data.id);
 
-    await fetchData()
+    await fetchData();
 
-    navigate("/gallery")
-  }
-
+    navigate("/gallery");
+  };
 
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Update your Crewmate</h1>
-       <Form nameInput={data.name} speedInput={data.speed} colorInput={data.color} forceInput={data.force} handleSubmit={handleSubmit} />
-       <div className={styles.btnContainer}>
-          <Button color="red" onClick={deleteItem}>Delete</Button>
-       </div>
+      <Form
+        nameInput={data.name}
+        speedInput={data.speed}
+        colorInput={data.color}
+        forceInput={data.force}
+        handleSubmit={handleSubmit}
+      />
+      <div className={styles.btnContainer}>
+        <Button color="red" onClick={deleteItem}>
+          Delete
+        </Button>
+      </div>
     </div>
   );
 }

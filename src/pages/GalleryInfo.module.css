@@ -27,6 +27,7 @@
   transition: 0.3s background-color;
 }
 
-.linkBtn:focus, .linkBtn:hover {
+.linkBtn:focus,
+.linkBtn:hover {
   background-color: var(--btn-bg-hover-color);
 }

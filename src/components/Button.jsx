@@ -1,9 +1,13 @@
-import styles from "./Button.module.css"
+import styles from "./Button.module.css";
 
-export default function Button({children, color, ...restProps}) {
+export default function Button({ children, color, ...restProps }) {
   console.log(color);
   return (
-    <button className={`${styles.btn} ${color ? styles[color] : ""}`} {...restProps}>{children}</button>
-  )
-
+    <button
+      className={`${styles.btn} ${color ? styles[color] : ""}`}
+      {...restProps}
+    >
+      {children}
+    </button>
+  );
 }
