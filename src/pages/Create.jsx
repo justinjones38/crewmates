@@ -13,14 +13,14 @@ export default function Create() {
 
   const handleSubmit = async(e, inputs) => {
     e.preventDefault();
-    if(!inputs.name || !inputs.speed || !inputs.color) {
+    if(!inputs.name || !inputs.speed || !inputs.color || !inputs.force) {
       alert("Please complete all form elements before submittting");
       return;
     }
 
     await supabase
       .from("crewmates")
-      .insert({name: inputs.name, speed: Number(inputs.speed), color: inputs.color})
+      .insert({name: inputs.name, speed: Number(inputs.speed), color: inputs.color, force: inputs.force})
     
     await fetchData()
 
@@ -37,7 +37,7 @@ export default function Create() {
         alt="A list of among us characters looking"
         className={styles.img}
       />
-      <Form nameInput="" speedInput="" colorInput="" handleSubmit={handleSubmit} />
+      <Form nameInput="" speedInput="" forceInput="" colorInput="" handleSubmit={handleSubmit} />
     </div>
   );
 }

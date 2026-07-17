@@ -41,6 +41,9 @@ export default function Gallery() {
                       Speed of crewmate: <span>{item.speed}mph</span>
                     </p>
                     <p className={styles.description}>
+                      Force of crewmate: <span>{item.force} force</span>
+                    </p>
+                    <p className={styles.description}>
                       Color of crewmate: <span>{item.color}</span>
                     </p>
                   </div>

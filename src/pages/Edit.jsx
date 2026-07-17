@@ -18,7 +18,7 @@ export default function Edit() {
 
   const handleSubmit = async(e, inputs) => {
     e.preventDefault();
-    if(!inputs.name || !inputs.speed || !inputs.color) {
+    if(!inputs.name || !inputs.speed || !inputs.force || !inputs.color) {
       alert("Please complete all form elements before submittting");
       return;
     }
@@ -30,7 +30,7 @@ export default function Edit() {
 
     await supabase
       .from("crewmates")
-      .update({name: inputs.name, speed: inputs.speed, color: inputs.color})
+      .update({name: inputs.name, speed: inputs.speed, color: inputs.color, force: inputs.force})
       .eq("id", id)
 
     await fetchData();
@@ -57,7 +57,7 @@ export default function Edit() {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Update your Crewmate</h1>
-       <Form nameInput={data.name} speedInput={data.speed} colorInput={data.color} handleSubmit={handleSubmit} />
+       <Form nameInput={data.name} speedInput={data.speed} colorInput={data.color} forceInput={data.force} handleSubmit={handleSubmit} />
        <div className={styles.btnContainer}>
           <Button color="red" onClick={deleteItem}>Delete</Button>
        </div>
