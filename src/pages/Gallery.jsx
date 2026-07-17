@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
-import { useOutletContext } from "react-router";
+import { useOutletContext, Link } from "react-router";
 import styles from "./Gallery.module.css";
 import Button from "../components/Button";
-import img from "../assets/among-us-char.png"
+import img from "../assets/among-us-char.png";
 
 export default function Gallery() {
-  const {crewmates, error} = useOutletContext();
+  const { crewmates, error } = useOutletContext();
 
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Your Crewmate Gallery!</h1>
       {error ? <h2>Cannot fetch data</h2> : null}
+      {!error && crewmates?.length === 0 ? (
+        <p className={styles.emptyDes}>No crewmates have been submited yet. Please add one!</p>
+      ) : null}
       {!error && crewmates ? (
         <div className={styles.cardContainer}>
           {crewmates.map((item) => (
@@ -19,20 +22,26 @@ export default function Gallery() {
               style={{ border: `1px solid ${item["color"]}` }}
               key={item.id}
             >
-              <img src={img} alt="A blue among us character" className={styles.img} />
-              <div className={styles.itemDescriptionContainer}>
-                <p className={styles.description}>
-                  Name of crewmate: <span>{item.name}</span>
-                </p>
-                <p className={styles.description}>
-                  Speed of crewmate: <span>{item.speed}mph</span>
-                </p>
-                <p className={styles.description}>
-                  Color of crewmate: <span>{item.color}</span>
-                </p>
-              </div>
+              <Link className={styles.cardLink}>
+                <img
+                  src={img}
+                  alt="A blue among us character"
+                  className={styles.img}
+                />
+                <div className={styles.itemDescriptionContainer}>
+                  <p className={styles.description}>
+                    Name of crewmate: <span>{item.name}</span>
+                  </p>
+                  <p className={styles.description}>
+                    Speed of crewmate: <span>{item.speed}mph</span>
+                  </p>
+                  <p className={styles.description}>
+                    Color of crewmate: <span>{item.color}</span>
+                  </p>
+                </div>
+              </Link>
               <div className={styles.btnContainer}>
-              <Button size="sm">Edit Crewmates</Button>
+                <Button size="sm">Edit Crewmates</Button>
               </div>
             </div>
           ))}
