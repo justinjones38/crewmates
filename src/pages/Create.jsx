@@ -17,14 +17,12 @@ export default function Create() {
       return;
     }
 
-    await supabase
-      .from("crewmates")
-      .insert({
-        name: inputs.name,
-        speed: Number(inputs.speed),
-        color: inputs.color,
-        force: inputs.force,
-      });
+    await supabase.from("crewmates").insert({
+      name: inputs.name,
+      speed: Number(inputs.speed),
+      color: inputs.color,
+      force: inputs.force,
+    });
 
     await fetchData();
 

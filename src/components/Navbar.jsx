@@ -9,22 +9,24 @@ let root = document.querySelector("html");
 
 export default function Navbar() {
   const [isMenuShown, setIsMenuShown] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(JSON.parse(localStorage.getItem("theme")) || false);
+  const [isDarkMode, setIsDarkMode] = useState(
+    JSON.parse(localStorage.getItem("theme")) || false,
+  );
   console.log(isDarkMode);
 
   useEffect(() => {
     localStorage.setItem("theme", JSON.stringify(isDarkMode));
-    if(isDarkMode) {
+    if (isDarkMode) {
       root.setAttribute("data-theme", "light");
     } else {
       root.removeAttribute("data-theme");
     }
-  }, [isDarkMode])
+  }, [isDarkMode]);
   const { windowWidth } = useWindowSize();
   const changeTheme = () => {
-    setIsDarkMode(prev => !prev);
+    setIsDarkMode((prev) => !prev);
     setIsMenuShown(false);
-  }
+  };
   return (
     <div className={styles.container}>
       <GiHamburgerMenu
@@ -78,7 +80,12 @@ export default function Navbar() {
               </NavLink>
             </li>
             <li className={styles.navList}>
-              <button className={styles.btn} onClick={() => setIsDarkMode(prev => !prev)}>{isDarkMode ? "Dark Mode" : "Light Mode"}</button>
+              <button
+                className={styles.btn}
+                onClick={() => setIsDarkMode((prev) => !prev)}
+              >
+                {isDarkMode ? "Dark Mode" : "Light Mode"}
+              </button>
             </li>
           </ul>
         </div>

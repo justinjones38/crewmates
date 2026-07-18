@@ -4,19 +4,19 @@ import styles from "./Gallery.module.css";
 import Button from "../components/Button";
 import SummaryCard from "../components/SummaryCard";
 import lightImg from "../assets/light-char.png";
-import darkImg from "../assets/dark-char.png"
+import darkImg from "../assets/dark-char.png";
 
 export default function Gallery() {
   const { crewmates, error } = useOutletContext();
   console.log(crewmates);
 
   const selectImg = (crewmate) => {
-    if(crewmate === "light") {
-      return lightImg
+    if (crewmate === "light") {
+      return lightImg;
     } else {
-      return darkImg
+      return darkImg;
     }
-  }
+  };
 
   return (
     <div className={styles.container}>

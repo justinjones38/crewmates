@@ -48,7 +48,8 @@
   transition: 0.3s border-bottom;
 }
 
-.btn:focus, .btn:hover {
+.btn:focus,
+.btn:hover {
   border-bottom: 3px solid var(--primary--text-color);
 }
 
