@@ -82,9 +82,9 @@ export default function Navbar() {
             <li className={styles.navList}>
               <button
                 className={styles.btn}
-                onClick={() => setIsDarkMode((prev) => !prev)}
+                onClick={changeTheme}
               >
-                {isDarkMode ? "Dark Mode" : "Light Mode"}
+                {isDarkMode ? "Light Mode" : "Dark Mode"}
               </button>
             </li>
           </ul>

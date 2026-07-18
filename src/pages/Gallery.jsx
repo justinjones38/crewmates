@@ -8,7 +8,15 @@ import darkImg from "../assets/dark-char.png";
 
 export default function Gallery() {
   const { crewmates, error } = useOutletContext();
-  console.log(crewmates);
+  if(!crewmates && !error) {
+    return <h2>Loading ...</h2>
+  }
+  const lightForcelen = crewmates.filter(
+    (item) => item.force === "light",
+  ).length;
+  const length = crewmates.length;
+  const lightForcePercentage = Math.round((lightForcelen / length) * 100);
+  const darkForcePercentage = 100 - lightForcePercentage;
 
   const selectImg = (crewmate) => {
     if (crewmate === "light") {
@@ -55,6 +63,10 @@ export default function Gallery() {
                     </p>
                     <p className={styles.description}>
                       Color of crewmate: <span>{item.color}</span>
+                    </p>
+                    <p className={styles.description}>
+                     Chance of victory: {item.force === "light" ? <span>{lightForcePercentage}%</span> 
+                     : <span>{darkForcePercentage}</span> }
                     </p>
                   </div>
                 </Link>
