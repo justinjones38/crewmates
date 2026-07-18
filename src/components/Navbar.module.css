@@ -41,6 +41,17 @@
   border-bottom: 3px solid var(--primary--text-color);
 }
 
+.btn {
+  font-size: 1.25rem;
+  background-color: transparent;
+  border: none;
+  transition: 0.3s border-bottom;
+}
+
+.btn:focus, .btn:hover {
+  border-bottom: 3px solid var(--primary--text-color);
+}
+
 @media (min-width: 700px) {
   .container {
     background-color: var(--secondary-bg-color);
