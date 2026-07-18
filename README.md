@@ -41,7 +41,7 @@ The following **optional** features are implemented:
     - A summary section does display the extra data.
 - [X] The summary page displays a custom “success” metric about a user’s crew which changes the look of the crewmate list
   - e.g., a pirate crew’s predicted success at commandeering a new galley
-    - In the summary section, there is a success metric which is determined by the amount of light force compared to dark force in a hypothetical battle. The more members the greater chance of success
+    - In the summary section, there is a success metric which is determined by the amount of light force compared to dark force in a hypothetical battle. The more members the greater chance of success. Furthermore, characters with a light force are given a light force image and dark force are given a dark force image.
 
 
 The following **additional** features are implemented:

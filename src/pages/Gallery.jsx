@@ -3,10 +3,20 @@ import { useOutletContext, Link } from "react-router";
 import styles from "./Gallery.module.css";
 import Button from "../components/Button";
 import SummaryCard from "../components/SummaryCard";
-import img from "../assets/among-us-char.png";
+import lightImg from "../assets/light-char.png";
+import darkImg from "../assets/dark-char.png";
 
 export default function Gallery() {
   const { crewmates, error } = useOutletContext();
+  console.log(crewmates);
+
+  const selectImg = (crewmate) => {
+    if (crewmate === "light") {
+      return lightImg;
+    } else {
+      return darkImg;
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -29,8 +39,8 @@ export default function Gallery() {
               >
                 <Link className={styles.cardLink} to={`${item.id}`}>
                   <img
-                    src={img}
-                    alt="A blue among us character"
+                    src={selectImg(item.force)}
+                    alt={`A ${crewmates.force} among us character`}
                     className={styles.img}
                   />
                   <div className={styles.itemDescriptionContainer}>

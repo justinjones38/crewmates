@@ -12,7 +12,7 @@ export default function Layout() {
     const { data, error } = await supabase
       .from("crewmates")
       .select()
-      .order("created_at", { ascending: true });
+      .order("created_at", { ascending: false });
 
     if (error) {
       setError(true);

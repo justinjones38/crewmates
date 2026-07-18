@@ -14,3 +14,15 @@
   --btn-red-bg-color: #ff999c;
   --btn-red-bg-hover-color: #ffc7c7;
 }
+
+html[data-theme="light"] {
+  --bg-color: #f7f7f7;
+  --secondary-bg-color: rgb(183, 191, 193);
+  /* Font Colors */
+  --primary--text-color: #0e0101;
+
+  /* Buttons  */
+  --btn-bg-color: #57dbff;
+  --btn-bg-hover-color: #8fe7ff;
+  --btn-text-color: #050505;
+}
